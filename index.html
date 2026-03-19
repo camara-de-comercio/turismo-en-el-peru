@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro — El Régimen Legal del Turismo en el Perú</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="badge">Presentación Oficial · Huánuco 2026</div>
+  <p class="hero-org">La Cámara de Comercio e Industrias Huánuco<br>tiene el honor de invitarle a la presentación del libro</p>
+  <h1>El Régimen Legal<br>del Turismo en el Perú</h1>
+  <p class="hero-author">Dr. Julio Barrera Egoavil</p>
+  <div class="event-details">
+    <div class="detail-item"><strong>Fecha</strong>30 de marzo</div>
+    <div class="detail-item"><strong>Hora</strong>05:30 p.m.</div>
+    <div class="detail-item"><strong>Lugar</strong>Auditorio CCIH</div>
+    <div class="detail-item"><strong>Dirección</strong>Jr. Gral. Prado 873 – Huánuco</div>
+  </div>
+</header>
+
+<main class="form-section">
+  <div class="ornament">◆ ◆ ◆</div>
+  <h2 class="section-title">Registro de Asistencia</h2>
+  <p class="section-sub">"Un aporte académico para el fortalecimiento del turismo y el desarrollo regional."</p>
+
+  <div class="form-card">
+    <div id="formWrap">
+      <form id="regForm" autocomplete="off">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombres">Nombres <span class="req">*</span></label>
+            <input type="text" id="nombres" placeholder="Ej: María Elena" required>
+          </div>
+          <div class="field">
+            <label for="apellidos">Apellidos <span class="req">*</span></label>
+            <input type="text" id="apellidos" placeholder="Ej: Torres Quispe" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="dni">DNI / Documento <span class="req">*</span></label>
+            <input type="text" id="dni" placeholder="Ej: 45678901" maxlength="12" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono / Celular</label>
+            <input type="tel" id="telefono" placeholder="Ej: 962 000 000">
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="field">
+            <label for="correo">Correo Electrónico <span class="req">*</span></label>
+            <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="institucion">Institución / Empresa</label>
+            <input type="text" id="institucion" placeholder="Ej: Universidad de Huánuco">
+          </div>
+          <div class="field">
+            <label for="cargo">Cargo / Profesión</label>
+            <input type="text" id="cargo" placeholder="Ej: Abogado, Docente…">
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="field">
+            <label for="tipo">Tipo de participante <span class="req">*</span></label>
+            <select id="tipo" required>
+              <option value="" disabled selected>— Seleccione —</option>
+              <option>Profesional / Empresario</option>
+              <option>Docente / Investigador</option>
+              <option>Estudiante Universitario</option>
+              <option>Funcionario Público</option>
+              <option>Público General</option>
+              <option>Representante del Sector Empresarial</option>
+              <option>Representante del Sector Privado</option>
+            </select>
+          </div>
+        </div>
+        <hr class="form-divider">
+        <button type="submit" class="submit-btn">Confirmar mi Asistencia</button>
+      </form>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✅</div>
+      <h3>¡Registro confirmado!</h3>
+      <p>Gracias por inscribirse. Le esperamos el <strong>30 de marzo</strong> a las <strong>5:30 p.m.</strong></p>
+      <br>
+      <button class="submit-btn" onclick="resetForm()" style="width:auto;padding:12px 28px;font-size:15px;">Registrar otro asistente</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 · Cámara de Comercio e Industrias Huánuco &nbsp;·&nbsp; USIL Fondo Editorial
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

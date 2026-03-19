@@ -1,0 +1,297 @@
+:root {
+  --green-dark: #1a3d2b;
+  --green-mid: #2d6a45;
+  --green-light: #4a9b6a;
+  --gold: #c8a96e;
+  --gold-light: #e8d5a3;
+  --cream: #f8f4ed;
+  --cream-dark: #ede8de;
+  --text-dark: #1c1c1c;
+  --text-mid: #3d3d3d;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 10px;
+  border: 2px solid var(--green-dark);
+  pointer-events: none;
+  z-index: 100;
+  opacity: .25;
+}
+
+.hero {
+  background: linear-gradient(170deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+  padding: 56px 32px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(200,169,110,.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(200,169,110,.1) 0%, transparent 40%);
+}
+
+.hero::after {
+  content: '❧';
+  position: absolute;
+  bottom: 16px; right: 24px;
+  color: var(--gold);
+  font-size: 28px;
+  opacity: .5;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.badge::before, .badge::after {
+  content: '◆';
+  font-size: 7px;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+}
+.badge::before { left: -14px; }
+.badge::after  { right: -14px; }
+
+.hero-org {
+  color: rgba(232,213,163,.75);
+  font-size: 15px;
+  letter-spacing: .5px;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.3);
+}
+
+.hero-author {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.event-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  position: relative;
+}
+
+.detail-item {
+  padding: 12px 24px;
+  border-right: 1px solid rgba(200,169,110,.4);
+  color: var(--cream);
+  font-size: 15px;
+}
+
+.detail-item:last-child { border-right: none; }
+
+.detail-item strong {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 22px;
+  margin: 8px 0;
+  letter-spacing: 8px;
+  opacity: .7;
+}
+
+.form-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 32px 64px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  color: var(--green-dark);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-mid);
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 36px;
+}
+
+.form-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-top: 4px solid var(--green-dark);
+  padding: 40px 40px 36px;
+  box-shadow: 0 8px 40px rgba(26,61,43,.1);
+  position: relative;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--green-dark), var(--gold), var(--green-dark));
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row.full { grid-template-columns: 1fr; }
+
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 28px 20px; }
+  .form-section { padding: 32px 16px 48px; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  font-weight: 600;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+label span.req { color: var(--gold); margin-left: 2px; }
+
+input, select {
+  border: 1px solid #d8d0c4;
+  border-radius: 2px;
+  padding: 11px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--text-dark);
+  background: var(--cream);
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(45,106,69,.12);
+  background: var(--white);
+}
+
+select { cursor: pointer; }
+
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--cream-dark);
+  margin: 28px 0;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  color: var(--white);
+  border: none;
+  padding: 16px 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, opacity .15s;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,169,110,.3), transparent);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,61,43,.35); }
+.submit-btn:hover::before { opacity: 1; }
+.submit-btn:active { transform: translateY(0); }
+
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 28px 20px;
+  animation: fadeIn .5s ease;
+}
+
+.success-msg.show { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.success-icon { font-size: 48px; margin-bottom: 12px; }
+
+.success-msg h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.success-msg p { color: var(--text-mid); font-size: 16px; }
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: rgba(26,61,43,.5);
+  font-size: 13px;
+  border-top: 1px solid var(--cream-dark);
+}
