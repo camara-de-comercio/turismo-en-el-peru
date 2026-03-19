@@ -2,7 +2,7 @@
 // INSTRUCCIÓN PARA AGENTE: reemplaza APPS_SCRIPT_URL
 // con la URL del Web App publicado en Google Apps Script
 // ══════════════════════════════════════════════════
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyLooMhuszySkB53-Tq9jVAO-dUmE0VwLU_RQ7-B_SYPm-vpqfX12QAEQoO8lGONAgI/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2poSOU7RLaS9821fyOa9MNGIH4AkKZrZ-TEV3D27EZ5pGl8XP2SAH0TV2893vZ_RJ/exec';
 
 document.getElementById('regForm').addEventListener('submit', async function (e) {
   e.preventDefault();
